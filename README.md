@@ -48,6 +48,12 @@ Se crean las apps requeridas
 Una vez descargado el repo, el proyecto se construye con estos comandos
     
     	- docker-compose up --build
+        - docker-compose run web python manage.py makemigrations
+	    - docker-compose run web python manage.py migrate
+        - docker-compose run web python manage.py createsuperuser
+
+# Añadir token 
+Se debe dirigir a la ruta http://localhost:8000/admin/authtoken/token/ ingresando el super usuario anteriormente creado y asociar un token se puede copiar este token para consumo de APIS
 
 # Apis
     "clients": "http://localhost:8000/api/clients/",
@@ -60,7 +66,7 @@ Una vez descargado el repo, el proyecto se construye con estos comandos
 Se realiza mediante JSON Web Token en el header utilizando el token
 
     key:Authorization
-    value:Token c20987a10f19fa61ecaba8117febc816d0a59075
+    value:Token "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 
 # Registro
 
