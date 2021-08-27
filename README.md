@@ -40,7 +40,7 @@ Se crean las apps requeridas
 Una vez descargado el repo, el proyecto se construye con estos comandos
     docker-compose up --build
     
-    ![image](https://raw.githubusercontent.com/jimmydmd/quick/master/assets/Screenshot_3.png)
+    ![Alt text](https://raw.githubusercontent.com/jimmydmd/quick/master/assets/Screenshot_3.png)
 
 
 # Apis
