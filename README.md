@@ -46,12 +46,13 @@ Se crean las apps requeridas
 # Despliegue 
 
 Una vez descargado el repo, el proyecto se construye con estos comandos
-        - cd venv\Scripts
-            activate
-    	- docker-compose up --build
-        - docker-compose run web python manage.py makemigrations
+
+	- cd venv\Scripts
+	    activate
+	- docker-compose up --build
+	- docker-compose run web python manage.py makemigrations
 	    - docker-compose run web python manage.py migrate
-        - docker-compose run web python manage.py createsuperuser
+	- docker-compose run web python manage.py createsuperuser
 
 # Añadir token 
 Se debe dirigir a la ruta http://localhost:8000/admin/authtoken/token/ ingresando el super usuario anteriormente creado y asociar un token se puede copiar este token para consumo de APIS
@@ -80,6 +81,8 @@ El registro se realiza mediante un formulario con correo, nombre de usuario y co
 El login se realiza mediante correo y contraseña anteriormente creados
 
     http://localhost:8000/login/
+Ejemplo
+
     user:jimmy@test.com
     pw:123456
 
