@@ -7,41 +7,38 @@
 # Instalacion 
 
 Instalacion de entorno virtual dentro de la carpeta raiz del proyecto
-    python -m venv venv
+    - python -m venv venv
 
 activacion entorno virtual 
-	cd venv\Scripts
-	activate
+	- cd venv\Scripts
+	- activate
 
 instalar requerimientos (dentro del archivo requirements.txt se encuentra la django, djangorestframework y psycopg2 "libreria para conexion a db")
-    pip install -r requirements.txt
+    - pip install -r requirements.txt
 
 Se crea un nuevo proyecto utilizando el contenedor "web" descrito en el docker-compose.yml
-    docker-compose run web django-admin startproject project_quick . 
+    - docker-compose run web django-admin startproject project_quick . 
 
 Se debe configurar la clave "ALLOWED_HOSTS"  en el archivo settings.py permitiendo el trafico a nuestro contenedor
-    ALLOWED_HOSTS = ['*']
+    - ALLOWED_HOSTS = ['*']
 
 Se inicia nuevamente el docker-compose
-	docker-compose up
+	- docker-compose up
 
 En  otra terminal podemos ejecutar las migraciones 
-	docker-compose run web python manage.py makemigrations
-	docker-compose run web python manage.py migrate
+	- docker-compose run web python manage.py makemigrations
+	- docker-compose run web python manage.py migrate
 
 Se crean las apps requeridas 
-    docker-compose run web  python manage.py startapp clients
-    docker-compose run web  python manage.py startapp bills
-    docker-compose run web  python manage.py startapp products
-    docker-compose run web  python manage.py startapp bills_products
+    - docker-compose run web  python manage.py startapp clients
+    - docker-compose run web  python manage.py startapp bills
+    - docker-compose run web  python manage.py startapp products
+    - docker-compose run web  python manage.py startapp bills_products
 
 # Despliegue 
 
 Una vez descargado el repo, el proyecto se construye con estos comandos
-    docker-compose up --build
-    
-    ![Alt text](https://raw.githubusercontent.com/jimmydmd/quick/master/assets/Screenshot_3.png)
-
+    - docker-compose up --build
 
 # Apis
     "clients": "http://localhost:8000/api/clients/",
@@ -78,8 +75,8 @@ El archivo contiene datos del cliente ademas de las facturas asociadas con el no
 # Importacion de archivo .csv
 
 La importacion se hace desde un archivo .csv para la creacion de clientes
-    http://localhost:8000/import/
+    - http://localhost:8000/import/
 
 Ejemplo de contenido de archivo .csv (delimitado con ,)
-    id, document, first_name, last_name, email
-    12, 23233223, kkkk, lll, kk@test.com
+    - id, document, first_name, last_name, email
+    - 12, 23233223, kkkk, lll, kk@test.com
