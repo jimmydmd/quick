@@ -46,7 +46,8 @@ Se crean las apps requeridas
 # Despliegue 
 
 Una vez descargado el repo, el proyecto se construye con estos comandos
-    
+        - cd venv\Scripts
+            activate
     	- docker-compose up --build
         - docker-compose run web python manage.py makemigrations
 	    - docker-compose run web python manage.py migrate
