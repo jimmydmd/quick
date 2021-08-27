@@ -57,8 +57,15 @@ Una vez descargado el repo, el proyecto se construye con estos comandos
 Si se requiere crear un super usuario
 
 	- docker-compose run web python manage.py createsuperuser
+Nota:
 
-# Añadir token 
+Se tiene configurado un usuario el cual es
+    
+    user:jimmy@test.com
+    pw:123456
+    Token 281c90478b665812f2a8142d1f57c11e2d2700ce
+    
+# Añadir token si es usuario nuevo despues de registro
 Se debe dirigir a la ruta http://localhost:8000/admin/authtoken/token/ ingresando el super usuario anteriormente creado y asociar un token se puede copiar este token para consumo de APIS
 
 # Apis
